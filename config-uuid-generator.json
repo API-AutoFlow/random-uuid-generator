@@ -1,0 +1,334 @@
+{
+  "$product": {
+    "name": "API AutoFlow",
+    "version": "1.0.25"
+  },
+  "Flow": [
+    {
+      "id": "f56fa197-52b1-4ca0-8ed8-11d3477792c7",
+      "meta": {},
+      "value": {
+        "default-test": "3e60ebba-0240-46c8-a222-c16c7e4d5660",
+        "flow": [
+          {
+            "$action": "data/set",
+            "at-location": {
+              "__LDATA__": [
+                "uuid"
+              ]
+            },
+            "value": []
+          },
+          {
+            "$action": "iteration/while",
+            "condition-location": {
+              "__LDATA__": [
+                "condition"
+              ]
+            },
+            "do": [
+              {
+                "$action": "integer/random",
+                "maximum": 15,
+                "output-location": {
+                  "__LDATA__": [
+                    "random-number"
+                  ]
+                }
+              },
+              {
+                "$action": "conditional/match",
+                "items": [
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 10
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "A"
+                      }
+                    ],
+                    "name": "match10"
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 11
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "B"
+                      }
+                    ],
+                    "name": "match11"
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 12
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "C"
+                      }
+                    ],
+                    "name": "match12"
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 13
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "D"
+                      }
+                    ],
+                    "name": "match13"
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 14
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "E"
+                      }
+                    ],
+                    "name": "match14"
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "$condition": "number/is-equal",
+                        "name": "condition1",
+                        "target": {
+                          "__LDATA__": []
+                        },
+                        "value": 15
+                      }
+                    ],
+                    "do": [
+                      {
+                        "$action": "data/set",
+                        "at-location": {
+                          "__LDATA__": [
+                            "random-number"
+                          ]
+                        },
+                        "value": "F"
+                      }
+                    ],
+                    "name": "match15"
+                  },
+                  {
+                    "conditions": [],
+                    "do": [],
+                    "name": "No Match"
+                  }
+                ],
+                "target": {
+                  "__LDATA__": [
+                    "random-number"
+                  ]
+                }
+              },
+              {
+                "$action": "array/insert-at",
+                "array": {
+                  "__LDATA__": [
+                    "uuid"
+                  ]
+                },
+                "index": 0,
+                "output-location": {
+                  "__LDATA__": [
+                    "uuid"
+                  ]
+                },
+                "value": {
+                  "__LDATA__": [
+                    "random-number"
+                  ]
+                }
+              }
+            ],
+            "index-location": {
+              "__LDATA__": [
+                "index"
+              ]
+            },
+            "max": 32
+          },
+          {
+            "$action": "array/join",
+            "array": {
+              "__LDATA__": [
+                "uuid"
+              ]
+            },
+            "output-location": {
+              "__LDATA__": [
+                "output"
+              ]
+            },
+            "separator": ""
+          }
+        ],
+        "name": "UUID Generator"
+      }
+    }
+  ],
+  "FlowTest": [
+    {
+      "id": "3e60ebba-0240-46c8-a222-c16c7e4d5660",
+      "meta": {
+        "index": [
+          "flow",
+          "f56fa197-52b1-4ca0-8ed8-11d3477792c7"
+        ]
+      },
+      "value": {
+        "input": {},
+        "name": "default-test-input"
+      }
+    }
+  ],
+  "Inbound": [
+    {
+      "id": "067f5ce8-d8d5-48a5-b301-e894dfa00a56",
+      "meta": {},
+      "value": {
+        "name": "a",
+        "port": 35106,
+        "type": "http server"
+      }
+    }
+  ],
+  "InboundEndpoint": [
+    {
+      "id": "adec2f8d-001a-4f0a-a720-8d6c4824fd0d",
+      "meta": {
+        "index": [
+          "inbound",
+          "067f5ce8-d8d5-48a5-b301-e894dfa00a56"
+        ]
+      },
+      "value": {
+        "default-test": "bf3b75fa-12d8-41d5-a2e0-6d3893a7ffcd",
+        "method": "ANY",
+        "name": "a",
+        "path": "/",
+        "type": "endpoint"
+      }
+    }
+  ],
+  "InboundEndpointFlow": [
+    {
+      "id": "adec2f8d-001a-4f0a-a720-8d6c4824fd0d",
+      "meta": {
+        "index": [
+          "inbound",
+          "067f5ce8-d8d5-48a5-b301-e894dfa00a56"
+        ]
+      },
+      "value": [
+        {
+          "$action": "flow/call",
+          "flow-id": "f56fa197-52b1-4ca0-8ed8-11d3477792c7",
+          "input": {},
+          "name": "UUID Generator",
+          "output-location": {
+            "__LDATA__": [
+              "uuid"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "InboundEndpointTest": [
+    {
+      "id": "bf3b75fa-12d8-41d5-a2e0-6d3893a7ffcd",
+      "meta": {
+        "index": [
+          "inbound",
+          "067f5ce8-d8d5-48a5-b301-e894dfa00a56",
+          "endpoint",
+          "adec2f8d-001a-4f0a-a720-8d6c4824fd0d"
+        ]
+      },
+      "value": {
+        "name": "default-test-input",
+        "request": {
+          "body": "",
+          "header": {},
+          "path": {},
+          "query": {}
+        }
+      }
+    }
+  ]
+}
